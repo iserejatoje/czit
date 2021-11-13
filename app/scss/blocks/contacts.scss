@@ -1,0 +1,55 @@
+section.contacts {
+
+  form {
+    margin-top: 34px;
+  }
+
+  .contacts-wrapper {
+    @include respond($mobile) {
+      margin-top: 50px;
+      margin-bottom: 120px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .contacts-grid {
+    border-top: 1px solid $gray-70;
+    padding-top: 24px;
+    display: grid;
+    margin-top: 8px;
+    grid-gap: 10px;
+
+    @include respond($mobile) {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+      .contact-cell:not(:first-child) {
+        text-align: center;
+      }
+    }
+
+  }
+
+  .contact-cell {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: $black;
+
+    a {
+      color: $blue2;
+    }
+  }
+}
+
+#map {
+  @include respond(0, $mobile) {
+    min-height: 290px;
+  }
+  @include respond($mobile) {
+    min-height: 486px;
+  }
+}

@@ -1,0 +1,77 @@
+@import 'node_modules/normalize.sass/normalize';
+
+@mixin font($font-name, $font-style, $font-weight, $font-url) {
+  @font-face {
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    font-display: swap;
+    src: url($font-url) format('woff2');
+  }
+}
+
+@mixin respond($min: -1, $max: -1, $media: "all") {
+  $query: "only " + $media;
+
+  @if $min != -1 and $max != -1 {
+    $query: "only " + $media + " and (min-width: " + $min + ") and (max-width: " + ($max - 1) + ")";
+  } @else if $min == -1 and $max != -1 {
+    $query: "only " + $media + " and (max-width: " + ($max - 1) + ")";
+  } @else if $min != -1 and $max == -1 {
+    $query: "only " + $media + " and (min-width: " + $min + ")";
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}
+
+@include font('ttnorms', normal, 400, '../fonts/TTNorms-Regular.woff2');
+@include font('ttnorms', normal, 500, '../fonts/TTNorms-Medium.woff2');
+@include font('ttnorms', normal, bold, '../fonts/TTNorms-Bold.woff2');
+
+$laptop: 1366px;
+$mobile: 1024px;
+$font-size: 16px;
+$blue2: #007b99;
+$text-color: #2e2e2e;
+$black: #2e2e2e;
+$light-gray: #f9f9f9;
+$gray: #8a8a8a;
+$white: #fff;
+$gray-70: transparentize(#8a8a8a, .7);
+$default-font: 'ttnorms', sans-serif;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+input, textarea {
+  outline: none;
+}
+
+body,
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background: $white;
+  font-family: $default-font;
+  font-size: $font-size;
+  color: $text-color;
+  min-width: 320px;
+  position: relative;
+}

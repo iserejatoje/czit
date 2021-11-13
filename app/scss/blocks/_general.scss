@@ -1,0 +1,456 @@
+.container {
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo-link {
+  display: block;
+
+  svg {
+    display: block;
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.breadcrumbs {
+  @include respond($mobile) {
+    padding: 35px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 0 0 15px 0;
+  }
+
+  &-separator {
+    padding: 0 10px;
+  }
+
+  svg {
+    transform: translateY(-1px);
+  }
+
+  span,
+  a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: $white;
+  }
+}
+
+.page-description {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 140%;
+  color: $white;
+
+  @include respond($mobile) {
+    font-size: 20px;
+    margin-top: 26px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+}
+
+.page-content {
+  @include respond($mobile) {
+    padding-top: 100px;
+  }
+  @include respond(0, $mobile) {
+    padding-top: 35px;
+  }
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: $white;
+  }
+
+  @include respond(0, $mobile) {
+    background: $blue2;
+    padding: 20px 0;
+  }
+
+  @include respond($mobile) {
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fs-20 {
+    color: $white;
+  }
+
+  h1 {
+    @include respond($mobile) {
+      margin-top: 50px;
+    }
+  }
+
+  @include respond($mobile) {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      pointer-events: none;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(46, 46, 46, 0.72) 0%, rgba(46, 46, 46, 0.29) 100%);
+    }
+  }
+}
+
+.z-1 {
+  z-index: 1;
+  position: relative;
+}
+
+.z-10 {
+  z-index: 10;
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 110%;
+  margin: 0;
+
+  @include respond($mobile) {
+    font-size: 56px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 110%;
+  color: $blue2;
+  margin: 0;
+
+  @include respond($mobile) {
+    font-size: 40px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 26px;
+  }
+
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.app-inner {
+  flex: 1 0 auto;
+}
+
+.fs-20 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.fs-22 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 140%;
+  color: $black;
+
+  @include respond($mobile) {
+    font-size: 22px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 20px;
+  }
+}
+
+footer {
+  color: $white;
+  flex: 0 0 auto;
+  background: $blue2;
+  min-height: 118px;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.row {
+  display: grid;
+  grid-column-gap: 30px;
+
+  &.columns-2 {
+
+    @include respond(0, $mobile) {
+      .column:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .column {
+      flex: 1;
+    }
+  }
+}
+
+.agreement-wrapper {
+  @include respond($mobile) {
+    margin-bottom: 42px;
+  }
+  @include respond(0, $mobile) {
+    margin-bottom: 35px;
+  }
+}
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  @include respond($mobile) {
+    padding-left: 46px;
+  }
+  @include respond(0, $mobile) {
+    padding-left: 35px;
+  }
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  display: inline-block;
+
+  input {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  a {
+    color: $blue2;
+  }
+
+  input:checked + span svg {
+    opacity: 1;
+  }
+
+  svg {
+    transition: opacity 200ms ease-in-out;
+    opacity: 0;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    border: 1px solid $gray;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+}
+
+.base-button {
+  background: linear-gradient(90deg, #00A7B2 0%, #007B99 100%);
+  height: 52px;
+  max-width: 187px;
+  width: 100%;
+  font-style: normal;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 110%;
+  color: $white;
+}
+
+form {
+  input {
+    padding: 8px 0;
+  }
+
+  .row:not(:last-child) {
+    @include respond($mobile) {
+      margin-bottom: 40px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 25px;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    border: none;
+    background: transparent;
+    outline: 0;
+    border-bottom: 1px solid $gray-70;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: $gray;
+  }
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: $black;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+form {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: $gray;
+  }
+}
+
+.block {
+  background: $light-gray;
+
+  @include respond($mobile) {
+    padding: 80px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 35px 0;
+  }
+
+  &-description {
+    margin-top: 19px;
+  }
+}
+
+.language-switch {
+  display: flex;
+  justify-content: space-between;
+  max-width: 56px;
+  width: 100%;
+  margin-left: 52px;
+  color: $gray;
+  margin-right: 44px;
+
+  a {
+    color: $gray;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .active {
+    color: $black;
+  }
+}
+
+.button {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.burger {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .burger-line {
+    width: 100%;
+    height: 2px;
+    display: block;
+    background: $black;
+
+    &:first-child {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.hide-on-mobile {
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+
+  @include respond(0, $mobile) {
+    padding: 15px 0;
+  }
+
+  @include respond($mobile) {
+    min-height: 106px;
+  }
+
+  .phone {
+    color: $black;
+  }
+
+  .logo-link {
+    margin-right: auto;
+  }
+}
