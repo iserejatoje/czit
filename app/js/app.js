@@ -7,10 +7,6 @@ phoneMask.forEach(element => IMask(element, {
     mask: '+{7} (000) 000-00-00'
 }))
 
-$(function () {
-
-})
-
 function elementInViewport(el) {
     let top = el.offsetTop
     let left = el.offsetLeft
@@ -29,7 +25,7 @@ function elementInViewport(el) {
     )
 }
 
-window.addEventListener('scroll', () => {
+function mapInit() {
     if (document.getElementById('map') && elementInViewport(document.getElementById('map')) && !mapShowed) {
         if (document.getElementById('map')) {
             mapShowed = true
@@ -54,4 +50,12 @@ window.addEventListener('scroll', () => {
             }
         }
     }
+}
+
+window.addEventListener('scroll', () => {
+    mapInit()
+})
+
+$(function () {
+    mapInit()
 })

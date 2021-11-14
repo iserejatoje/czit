@@ -1,5 +1,11 @@
 section.contacts {
 
+  .picture {
+    &:after {
+      background: linear-gradient(90deg, rgba(46, 46, 46, 0.72) 0%, rgba(46, 46, 46, 0.29) 100%);
+    }
+  }
+
   form {
     margin-top: 34px;
   }
@@ -30,15 +36,6 @@ section.contacts {
       }
     }
 
-  }
-
-  .contact-cell {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 140%;
-    color: $black;
-
     a {
       color: $blue2;
     }
@@ -46,6 +43,7 @@ section.contacts {
 }
 
 #map {
+  background: $light-gray;
   @include respond(0, $mobile) {
     min-height: 290px;
   }

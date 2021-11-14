@@ -5,3 +5,6 @@ _Вёрстка страниц Центра Инженерных Техноло�
 Содержание:
 
 - [Контакты](https://iserejatoje.github.io/czit/contacts.html)
+- [Услуги](https://iserejatoje.github.io/czit/services.html)
+
+Made with ❤️‍🔥 by ATOM WEB STUDIO
