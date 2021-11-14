@@ -171,7 +171,26 @@ h2 {
   @include respond(0, $mobile) {
     font-size: 26px;
   }
+}
 
+.column-label {
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 140%;
+  font-feature-settings: 'rtla' on, 'isol' on;
+  color: $blue1;
+  margin: 0;
+
+  @include respond($mobile) {
+    font-size: 24px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 18px;
+  }
 }
 
 .font-bold {
@@ -309,17 +328,69 @@ footer {
   }
 }
 
-.base-button {
-  background: linear-gradient(90deg, #00A7B2 0%, #007B99 100%);
+@mixin style-button-blue {
   height: 52px;
+  font-size: 18px;
   padding: 0 50px;
+  color: $white;
+  transition: box-shadow 200ms ease-in-out;
+
+  &:active,
+  &:hover {
+    box-shadow: 0 10px 26px 0 rgba(0, 123, 153, .44);
+  }
+}
+
+@mixin style-button-white {
+  height: 42px;
+  font-size: 16px;
+  padding: 0 40px;
+  color: $blue2;
+}
+
+@mixin style-button {
+  background: linear-gradient(90deg, #00A7B2 0%, #007B99 100%);
   font-style: normal;
   border-radius: 30px;
   border: none;
   font-weight: 500;
-  font-size: 18px;
   line-height: 110%;
-  color: $white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.base-button {
+  @include style-button-blue;
+  @include style-button;
+}
+
+.button-white {
+  @include style-button;
+  @include style-button-white;
+  position: relative;
+  transition: color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+  span {
+    position: relative;
+  }
+
+  &:active,
+  &:hover {
+    color: $white;
+    box-shadow: 0 10px 26px 0 rgba(0, 123, 153, .44);
+  }
+
+  &:after {
+    transition: background 200ms ease-in-out;
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    border-radius: 30px;
+  }
 }
 
 form {
@@ -394,6 +465,67 @@ form {
   }
 }
 
+.block-medium {
+
+  h3 {
+    @include respond($mobile) {
+      margin-bottom: 45px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &.block-white {
+    background: $white;
+
+    @include respond($mobile) {
+      padding: 60px 0;
+    }
+    @include respond(0, $mobile) {
+      padding: 35px 0;
+    }
+
+    .button-white:after {
+      background: $white;
+    }
+
+    .button-white:active:after,
+    .button-white:hover:after {
+      background: transparent;
+    }
+  }
+
+  .row {
+    margin-bottom: 40px;
+  }
+
+  &.block-gray {
+    background: $light-gray;
+
+    @include respond($mobile) {
+      padding: 50px 0;
+    }
+    @include respond(0, $mobile) {
+      padding: 35px 0;
+    }
+
+    .button-white:after {
+      background: $light-gray;
+    }
+
+    .button-white:active:after,
+    .button-white:hover:after {
+      background: transparent;
+    }
+  }
+
+
+  &-description {
+    margin-top: 19px;
+  }
+}
+
 .language-switch {
   display: flex;
   justify-content: space-between;
@@ -407,6 +539,7 @@ form {
     color: $gray;
     transition: color 200ms ease-in-out;
 
+    &:active,
     &:hover {
       color: $black;
     }
