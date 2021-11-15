@@ -201,7 +201,7 @@ h1 {
       font-size: 40px;
     }
     @include respond(0, $mobile) {
-      font-size: 24px;
+      font-size: 21px;
     }
   }
 
@@ -311,6 +311,15 @@ footer {
     background: $white;
   }
 
+  .first {
+    &:first-child {
+      .column:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+    }
+  }
+
   .first .column {
     @include respond($mobile) {
       padding-bottom: 50px;
@@ -318,6 +327,7 @@ footer {
     @include respond(0, $mobile) {
       padding-bottom: 25px;
     }
+
   }
 
   .icon {
