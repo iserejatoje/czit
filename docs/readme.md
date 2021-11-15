@@ -8,6 +8,7 @@ _Вёрстка страниц Центра Инженерных Техноло�
 - [Услуги](https://iserejatoje.github.io/czit/services.html)
 - [Проекты](https://iserejatoje.github.io/czit/projects.html)
 - [О компании](https://iserejatoje.github.io/czit/projects.html)
+- [Проект](https://iserejatoje.github.io/czit/project.html)
 
 Made with ❤️‍🔥 by ATOM WEB STUDIO
 

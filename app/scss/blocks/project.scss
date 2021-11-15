@@ -1,0 +1,87 @@
+section.project {
+  form {
+    margin-top: 34px;
+  }
+
+  .picture {
+    &:after {
+      background: linear-gradient(90deg, rgba(46, 46, 46, 0.72) 0%, rgba(46, 46, 46, 0.29) 100%);
+    }
+  }
+
+  .green-block {
+    background: $blue1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+
+    @include respond(0, $mobile) {
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    @include respond($mobile) {
+      font-size: 26px;
+      padding: 44px;
+      transform: translateY(-50px);
+      min-height: 273px;
+      max-width: 500px;
+    }
+  }
+
+  .text-content {
+    margin-top: 26px;
+
+    p {
+      line-height: 155%;
+
+      &:not(:last-child) {
+        margin-bottom: 2em;
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .column:last-child {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .column:first-child {
+      @include respond($mobile) {
+        padding-right: 60px;
+      }
+    }
+  }
+
+  .gallery {
+    @include respond($mobile) {
+      padding: 80px 0 100px 0;
+    }
+    @include respond(0, $mobile) {
+      padding: 40px 0 50px 0;
+    }
+    display: grid;
+    grid-gap: 30px;
+
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include respond(870px, $mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

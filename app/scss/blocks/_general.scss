@@ -96,9 +96,18 @@
   }
 
   h1 {
-    @include respond($mobile) {
-      margin-top: 50px;
+    &:not(.fs-40) {
+      @include respond($mobile) {
+        margin-top: 50px;
+      }
     }
+
+    &.fs-40 {
+      @include respond($mobile) {
+        margin-top: 20px;
+      }
+    }
+
   }
 
 }
@@ -153,18 +162,49 @@ body {
   }
 }
 
+.project-address {
+  max-width: 350px;
+}
+
+.project-description {
+  max-width: 440px;
+}
+
+.block-2 {
+  @include respond($mobile) {
+    padding: 100px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0;
+  }
+}
+
 h1 {
   font-style: normal;
   font-weight: bold;
-  line-height: 110%;
   margin: 0;
 
-  @include respond($mobile) {
-    font-size: 56px;
+  &:not(.fs-40) {
+    line-height: 110%;
+    @include respond($mobile) {
+      font-size: 56px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 34px;
+    }
   }
-  @include respond(0, $mobile) {
-    font-size: 34px;
+
+  &.fs-40 {
+    line-height: 150%;
+    max-width: 850px;
+    @include respond($mobile) {
+      font-size: 40px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 24px;
+    }
   }
+
 }
 
 h2 {
@@ -263,6 +303,44 @@ footer {
   font-weight: normal;
   font-size: 16px;
   line-height: 140%;
+}
+
+.advantages {
+
+  &.white {
+    background: $white;
+  }
+
+  .first .column {
+    @include respond($mobile) {
+      padding-bottom: 50px;
+    }
+    @include respond(0, $mobile) {
+      padding-bottom: 25px;
+    }
+  }
+
+  .icon {
+    @include respond($mobile) {
+      max-width: 84px;
+    }
+    @include respond(0, $mobile) {
+      max-width: 75px;
+    }
+    width: 100%;
+  }
+
+  .description {
+    margin-top: 8px;
+    max-width: 445px;
+  }
+
+  .column {
+    padding-top: 34px;
+    border-top: 1px solid $gray-70;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .row {

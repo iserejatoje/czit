@@ -9,40 +9,6 @@ section.about {
     margin-top: 34px;
   }
 
-  .advantages {
-
-    .first .column {
-      @include respond($mobile) {
-        padding-bottom: 50px;
-      }
-      @include respond(0, $mobile) {
-        padding-bottom: 25px;
-      }
-    }
-
-    .icon {
-      @include respond($mobile) {
-        max-width: 84px;
-      }
-      @include respond(0, $mobile) {
-        max-width: 75px;
-      }
-      width: 100%;
-    }
-
-    .description {
-      margin-top: 8px;
-      max-width: 445px;
-    }
-
-    .column {
-      padding-top: 34px;
-      border-top: 1px solid $gray-70;
-      display: flex;
-      align-items: center;
-    }
-  }
-
   .documents {
     @include respond($mobile) {
       padding: 100px 0;
