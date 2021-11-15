@@ -10,3 +10,4 @@ _Вёрстка страниц Центра Инженерных Техноло�
 
 Made with ❤️‍🔥 by ATOM WEB STUDIO
 
+![QR CODE](https://iserejatoje.github.io/czit/images/czit_iserejatoje.github.io.png)
