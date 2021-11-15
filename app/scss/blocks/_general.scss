@@ -314,8 +314,10 @@ footer {
   .first {
     &:first-child {
       .column:first-child {
-        border-top: none;
-        padding-top: 0;
+        @include respond(0, $mobile) {
+          border-top: none;
+          padding-top: 0;
+        }
       }
     }
   }
