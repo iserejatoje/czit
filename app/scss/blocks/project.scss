@@ -80,6 +80,23 @@ section.project {
     }
 
     img {
+      transition: transform 500ms ease-in-out;
+    }
+
+    .card {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    img {
       max-width: 100%;
       width: 100%;
     }
