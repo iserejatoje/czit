@@ -1,0 +1,233 @@
+section.about {
+  .picture {
+    &:after {
+      background: linear-gradient(90deg, rgba(46, 46, 46, 0.72) 0%, rgba(46, 46, 46, 0.29) 100%);
+    }
+  }
+
+  form {
+    margin-top: 34px;
+  }
+
+  .advantages {
+
+    .first .column {
+      @include respond($mobile) {
+        padding-bottom: 50px;
+      }
+      @include respond(0, $mobile) {
+        padding-bottom: 25px;
+      }
+    }
+
+    .icon {
+      @include respond($mobile) {
+        max-width: 84px;
+      }
+      @include respond(0, $mobile) {
+        max-width: 75px;
+      }
+      width: 100%;
+    }
+
+    .description {
+      margin-top: 8px;
+      max-width: 445px;
+    }
+
+    .column {
+      padding-top: 34px;
+      border-top: 1px solid $gray-70;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .documents {
+    @include respond($mobile) {
+      padding: 100px 0;
+    }
+    @include respond(0, $mobile) {
+      padding: 50px 0;
+    }
+  }
+
+  .advantages-title {
+    max-width: 660px;
+
+    @include respond($mobile) {
+      margin-bottom: 50px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .about-content {
+
+    @include respond(0, $mobile) {
+      padding: 40px 0;
+    }
+
+    @include respond($mobile) {
+      display: flex;
+      padding: 105px 0;
+    }
+
+    .h3 {
+      @include respond($mobile) {
+        margin-bottom: 40px;
+      }
+      @include respond(0, $mobile) {
+        margin-bottom: 25px;
+      }
+      max-width: 470px;
+    }
+
+    p {
+      margin: 0 0 30px;
+    }
+
+    .column {
+      @include respond($mobile) {
+        width: 50%;
+      }
+    }
+
+    .column:first-child {
+      @include respond($mobile) {
+        flex: 1;
+        padding-right: 35px;
+      }
+    }
+
+    .column:last-child {
+      @include respond(0, $mobile) {
+        padding: 0 15px;
+      }
+      @include respond($mobile, $laptop) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+
+    }
+  }
+
+  .slider {
+    @include respond($laptop) {
+      position: relative;
+      margin: 0 65px;
+    }
+  }
+
+  .date {
+    @include respond($laptop) {
+      margin-left: 50px;
+    }
+  }
+
+  .swiper-slide {
+    background: $light-gray;
+    @include respond($laptop) {
+      min-height: 112px;
+      padding: 20px 70px;
+    }
+    @include respond(0, $laptop) {
+      flex-direction: column;
+      padding: 20px 40px;
+    }
+
+    > * {
+      @include respond(0, $laptop) {
+        margin: 8px 0;
+      }
+    }
+
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-button-disabled {
+    opacity: .5;
+  }
+
+  .base-button-medium {
+    @include respond($laptop) {
+      margin-right: 50px;
+      margin-left: auto;
+
+    }
+  }
+
+  .swiper-next,
+  .swiper-prev {
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    position: absolute;
+  }
+
+  .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+
+    @include respond($mobile) {
+      margin-top: 40px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 25px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $gray;
+
+    &.swiper-pagination-bullet-active,
+    &:hover {
+      background: $blue1;
+      border-color: $blue1;
+    }
+  }
+
+  .swiper-prev {
+    left: -65px;
+  }
+
+  .swiper-next {
+    right: -65px;
+  }
+
+  .swiper-container {
+    overflow: hidden;
+
+    @include respond($mobile) {
+      margin-top: 40px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 25px;
+    }
+  }
+
+}
+
+
+.swiper-navigation {
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}

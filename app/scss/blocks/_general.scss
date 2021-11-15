@@ -186,12 +186,10 @@ h2 {
   margin-bottom: 8px;
 }
 
-h3 {
+@mixin h3 {
   font-style: normal;
   font-weight: bold;
   line-height: 140%;
-  font-feature-settings: 'rtla' on, 'isol' on;
-  color: $blue1;
   margin: 0;
 
   @include respond($mobile) {
@@ -200,6 +198,16 @@ h3 {
   @include respond(0, $mobile) {
     font-size: 18px;
   }
+}
+
+h3 {
+  color: $blue1;
+  @include h3;
+}
+
+.h3 {
+  color: $blue2;
+  @include h3;
 }
 
 .font-bold {
@@ -264,7 +272,7 @@ footer {
   &.columns-2 {
 
     @include respond(0, $mobile) {
-      .column:not(:last-child) {
+      .column:not(:last-child):not(.not-margin) {
         margin-bottom: 25px;
       }
     }
@@ -350,10 +358,30 @@ footer {
   }
 }
 
+@mixin style-button-blue-medium {
+  height: 44px;
+  font-size: 18px;
+  padding: 0 35px;
+  color: $white;
+  transition: box-shadow 200ms ease-in-out;
+
+  &:active,
+  &:hover {
+    box-shadow: 0 10px 26px 0 rgba(0, 123, 153, .44);
+  }
+}
+
 @mixin style-button-white {
   height: 42px;
   font-size: 16px;
   padding: 0 40px;
+  color: $blue2;
+}
+
+@mixin style-button-white-medium {
+  height: 44px;
+  font-size: 18px;
+  padding: 0 36px;
   color: $blue2;
 }
 
@@ -372,6 +400,45 @@ footer {
 .base-button {
   @include style-button-blue;
   @include style-button;
+}
+
+.base-button-medium {
+  @include style-button-blue-medium;
+  @include style-button;
+}
+
+.button-white-medium {
+  @include style-button;
+  @include style-button-white-medium;
+  position: relative;
+  transition: color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:active,
+  &:hover {
+    color: $white;
+    box-shadow: 0 10px 26px 0 rgba(0, 123, 153, .44);
+
+    &:after {
+      background: transparent;
+    }
+  }
+
+  &:after {
+    transition: background 200ms ease-in-out;
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    background: $white;
+    top: 1px;
+    bottom: 1px;
+    border-radius: 30px;
+  }
 }
 
 .button-white {
@@ -499,7 +566,7 @@ form {
     padding: 25px;
   }
   @include respond(0, $mobile) {
-    top: 3px;
+    top: 0;
     padding: 20px;
   }
 
@@ -665,7 +732,7 @@ form {
   justify-content: space-between;
   max-width: 56px;
   width: 100%;
-  margin-left: 52px;
+  margin-left: 44px;
   color: $gray;
   margin-right: 44px;
 
@@ -700,6 +767,7 @@ form {
 
   .burger-line {
     width: 100%;
+    min-height: 2px;
     height: 2px;
     display: block;
     background: $black;
@@ -725,6 +793,15 @@ header {
   z-index: 10;
 }
 
+.container-margin-left {
+  @include respond(0, 1140px) {
+    padding: 0 15px;
+  }
+  @include respond(1140px) {
+    margin-left: calc((100% - 1110px) / 2);
+  }
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -739,6 +816,7 @@ header {
 
   .phone {
     color: $black;
+    letter-spacing: .5px;
   }
 
   .logo-link {

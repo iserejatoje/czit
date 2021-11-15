@@ -58,6 +58,14 @@ window.addEventListener('scroll', () => {
     mapInit()
 })
 
+function closeAllWindows() {
+    $('body').removeClass('menu-opened')
+}
+
+$(document).keyup(function(e) {
+    if (e.key === "Escape") closeAllWindows()
+});
+
 $(function () {
     mapInit()
 
