@@ -7,6 +7,8 @@ phoneMask.forEach(element => IMask(element, {
     mask: '+{7} (000) 000-00-00'
 }))
 
+
+
 function elementInViewport(el) {
     let top = el.offsetTop
     let left = el.offsetLeft
@@ -58,4 +60,15 @@ window.addEventListener('scroll', () => {
 
 $(function () {
     mapInit()
+
+    $('.overlay').click(function (e) {
+        if ($(e.target).hasClass('overlay'))
+            $('body').removeClass('menu-opened')
+    })
+    $('.close-button').click(function () {
+        $('body').removeClass('menu-opened')
+    })
+    $('.burger').click(function () {
+        $('body').addClass('menu-opened')
+    })
 })
