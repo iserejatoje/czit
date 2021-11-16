@@ -40,14 +40,14 @@ section.contacts {
       color: $blue2;
     }
   }
-}
 
-#map {
-  background: $light-gray;
-  @include respond(0, $mobile) {
-    min-height: 290px;
-  }
-  @include respond($mobile) {
-    min-height: 486px;
+  #map {
+    background: $light-gray;
+    @include respond(0, $mobile) {
+      min-height: 290px;
+    }
+    @include respond($mobile) {
+      min-height: 486px;
+    }
   }
 }

@@ -219,9 +219,23 @@
   overflow: hidden;
   position: relative;
 
+  #map {
+    background: $light-gray;
+    @include respond(0, $mobile) {
+      min-height: 290px;
+    }
+    @include respond($mobile) {
+      min-height: 520px;
+    }
+  }
+
   .contacts {
     display: flex;
     color: $white;
+
+    @include respond($mobile) {
+      max-height: 520px;
+    }
 
     @include respond(0, $mobile) {
       flex-direction: column-reverse;
