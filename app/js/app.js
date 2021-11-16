@@ -46,6 +46,7 @@ function mapInit() {
                             balloonContent: '620142, г. Екатеринбург, ул. Большакова, 25, секция 2, вход 2, офис 3'
                         }, {})
 
+
                     map.behaviors.disable('scrollZoom')
                     map.geoObjects.add(placemark)
                 })

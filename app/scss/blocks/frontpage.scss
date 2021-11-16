@@ -1,0 +1,329 @@
+.frontpage-slider {
+  position: relative;
+  overflow: hidden;
+
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $white;
+
+    &.swiper-pagination-bullet-active,
+    &:hover {
+      background: $white;
+      border-color: $white;
+    }
+  }
+
+  .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(0, $mobile) {
+      background: linear-gradient(45deg, $blue2, $blue1);
+    }
+
+    @include respond($mobile) {
+      height: calc(100vh - 106px);
+
+      @include respond($laptop) {
+        min-height: 400px;
+      }
+    }
+
+    @include respond(0, $mobile) {
+      padding: 30px 0 70px 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36));
+    }
+  }
+}
+
+.swiper-content {
+  position: relative;
+  z-index: 1;
+  color: $white;
+
+  .h1 {
+    @include respond($mobile) {
+      margin-bottom: 62px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 30px;
+    }
+    max-width: 750px;
+  }
+}
+
+.swiper-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.brand-grid {
+  margin-top: 30px;
+  display: grid;
+
+  @include respond($laptop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include respond($mobile, $laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 30px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include respond($laptop) {
+    .card:nth-child(-n+4) {
+      border-bottom: 1px solid $gray-70;
+    }
+    .card:nth-child(-n+3) {
+      border-right: 1px solid $gray-70;
+    }
+    .card:nth-child(4n+5) {
+      border-right: 1px solid $gray-70;
+    }
+    .card:nth-child(4n+6) {
+      border-right: 1px solid $gray-70;
+    }
+    .card:nth-child(4n+7) {
+      border-right: 1px solid $gray-70;
+    }
+  }
+
+  @include respond($mobile, $laptop) {
+    .card {
+      border-bottom: 1px solid $gray-70;
+
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        border-bottom: none !important;
+      }
+
+      &:nth-child(odd) {
+        border-right: 1px solid $gray-70;
+      }
+    }
+  }
+}
+
+.project-grid {
+  display: grid;
+  margin-top: 32px;
+  margin-bottom: 42px;
+
+  @include respond($mobile) {
+    grid-row-gap: 60px;
+    grid-column-gap: 30px;
+  }
+  @include respond(0, $mobile) {
+    grid-row-gap: 40px;
+    grid-column-gap: 30px;
+  }
+
+  .image {
+    overflow: hidden;
+  }
+
+  a {
+    color: $black;
+
+    &:hover {
+      .title {
+        color: $blue2;
+      }
+
+      img {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  .title {
+    @include respond($mobile) {
+      margin-top: 30px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 15px;
+    }
+    transition: color 200ms ease-in-out;
+  }
+
+  .description {
+    margin-top: 12px;
+  }
+
+  @include respond($mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  img {
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+  }
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.blue2-bg {
+  background: $blue2;
+  @include respond(0, $mobile) {
+    padding: 30px 0;
+  }
+}
+
+.frontpage {
+  overflow: hidden;
+  position: relative;
+
+  .contacts {
+    display: flex;
+    color: $white;
+
+    @include respond(0, $mobile) {
+      flex-direction: column-reverse;
+    }
+
+    .h1 {
+      margin-bottom: 40px;
+    }
+
+    .fs-16 {
+      margin-bottom: 12px;
+    }
+
+    .fs-22 {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+      display: inline-block;
+    }
+
+    .fs-16,
+    .fs-22 {
+      color: $white;
+    }
+
+    a {
+      color: $white;
+    }
+
+    .column:first-child {
+      @include respond($mobile) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+    }
+
+    .column {
+      @include respond($mobile) {
+        width: 50%;
+      }
+    }
+  }
+
+  form {
+    margin-top: 20px;
+  }
+}
+
+.skill-gallery {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid $gray-70;
+  display: grid;
+  grid-gap: 30px;
+
+  @include respond($mobile) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(920px, $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image {
+    overflow: hidden;
+  }
+
+  .card {
+
+    &:hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  img {
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+  }
+
+  .description {
+    margin-top: 4px;
+  }
+
+  .title {
+    color: $blue2;
+
+    @include respond($mobile) {
+      margin-top: 24px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 16px;
+    }
+  }
+
+}
+
+.skill-block {
+  .fs-20 {
+    max-width: 850px;
+  }
+}
